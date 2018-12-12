@@ -1,0 +1,20 @@
+grid = [['.', '.', '.', '.', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['.', 'O', 'O', 'O', 'O', 'O'],
+        ['O', 'O', 'O', 'O', 'O', '.'],
+        ['O', 'O', 'O', 'O', '.', '.'],
+        ['.', 'O', 'O', '.', '.', '.'],
+        ['.', '.', '.', '.', '.', '.']]
+line=""
+
+'''two loops are used to access the values of the list within the list.
+Each retrieved value is appended to a string and printed at the end of each line.
+The string is then set to None for the next line.'''
+
+for i in range(len(grid[0])):
+    for j in range(len(grid)):
+        line+=grid[j][i]
+    print(line)
+    line=""
