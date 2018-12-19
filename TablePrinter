@@ -1,0 +1,27 @@
+'''Write a function named printTable() that takes a list of lists of strings and 
+displays it in a well-organized table with each column right-justified. 
+Assume that all the inner lists will contain the same number of strings.'''
+
+#! /usr/bin/env python3
+#tablePrinter.py takes a list of lists and returns right-justified table
+
+def printTable(data):
+    #initializing a variable to store column width 
+    colwidth=[0]*len(data)
+    
+    #finding max length of values of each list
+    for value in range(len(data)):
+        colwidth[value]=len(max(data[value],key=len))
+        
+    #printing it in table format with right justification
+    for i in range(len(data[0])):
+        finalstr=""
+        for j in range(len(data)):
+            string=data[j][i]
+            finalstr+=string.rjust(colwidth[j])+" "
+        print(finalstr+"\n")
+        
+tabledata=[['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+printTable(tabledata)
